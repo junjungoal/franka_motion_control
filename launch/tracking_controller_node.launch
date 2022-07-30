@@ -8,9 +8,10 @@
   <arg name="joint_command_topic" default="joint_command" />
   <arg name="robot_joint_command_topic" default="robot_joint_command" /> 
   <arg name="load_gripper" default="true" />
-  <arg name="robot_urdf" default="$(find franka_panda_description)/robots/panda_arm_hand.urdf.xacro"/> 
+  <arg name="robot_urdf" default="$(find franka_description)/robots/panda_arm_hand.urdf.xarco"/> 
 
-  <param name="robot_description" command="$(find xacro)/xacro $(arg robot_urdf)" />
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find franka_description)/robots/panda_arm_hand.urdf.xacro'"  />
+  <!-- <param name="robot_description" command="$(find xacro)/xacro $(arg robot_urdf)" /> -->
   <param name="robot_ip" value="$(arg robot_ip)" type="str" />
   <param name="mode" value="$(arg mode)" type="str" />
   <param name="prefix" value="$(arg prefix)" type="str" />
